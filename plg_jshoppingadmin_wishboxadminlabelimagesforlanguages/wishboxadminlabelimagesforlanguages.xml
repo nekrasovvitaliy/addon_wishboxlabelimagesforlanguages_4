@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.8.2" type="plugin" method="upgrade" group="jshoppingadmin">
+<extension version="4.2.2" type="plugin" method="upgrade" group="jshoppingadmin">
 	<name>plg_jshoppingadmin_wishboxadminlabelimagesforlanguages</name>
 	<creationDate>December 2018</creationDate>
-	<copyright>Copyright (C) 2013-2022 WishBox. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2013-2018 WishBox. All rights reserved.</copyright>
 	<version>1.0.0</version>
 	<author>Vitaliy Nekrasov</author>
 	<authorEmail>nekrasov_vitaliy@list.ru</authorEmail>

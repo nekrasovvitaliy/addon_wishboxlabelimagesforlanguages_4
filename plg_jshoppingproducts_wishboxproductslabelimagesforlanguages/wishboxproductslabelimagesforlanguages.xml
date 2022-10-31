@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.2.0" type="plugin" method="upgrade" group="jshoppingproducts">
+<extension version="4.2.2" type="plugin" method="upgrade" group="jshoppingproducts">
 	<name>plg_jshoppingproducts_wishboxproductslabelimagesforlanguages</name>
 	<creationDate>December 2018</creationDate>
-	<copyright>Copyright (C) 2013-2018 WishBox. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2013-2022 WishBox. All rights reserved.</copyright>
 	<version>1.0.0</version>
 	<author>Vitaliy Nekrasov</author>
 	<authorEmail>nekrasov_vitaliy@list.ru</authorEmail>
 	<license>GNU General Public License version 2 or later</license>
-	<description>PLG_JSHOPPINGproducts_WISHBOXproductslabelimagesforlanguages_XML_DESCRIPTION</description>
+	<description>PLG_JSHOPPINGproducts_WISHBOXPRODUCTSLABELIMAGESFORLANGUAGES_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="wishboxproductslabelimagesforlanguages">wishboxproductslabelimagesforlanguages.php</filename>
 	</files>
 	<languages>
-		<language tag="en-GB">language/en-GB/en-GB.plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.ini</language>
-		<language tag="en-GB">language/en-GB/en-GB.plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.sys.ini</language>
-		<language tag="ru-RU">language/ru-RU/ru-RU.plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.ini</language>
-		<language tag="ru-RU">language/ru-RU/ru-RU.plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.sys.ini</language>
-		<language tag="uk-UA">language/uk-UA/uk-UA.plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.ini</language>
-		<language tag="uk-UA">language/uk-UA/uk-UA.plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.sys.ini</language>
+		<language tag="en-GB">language/en-GB/plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.ini</language>
+		<language tag="en-GB">language/en-GB/plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.ini</language>
+		<language tag="ru-RU">language/ru-RU/plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.sys.ini</language>
+		<language tag="uk-UA">language/uk-UA/plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.ini</language>
+		<language tag="uk-UA">language/uk-UA/plg_jshoppingproducts_wishboxproductslabelimagesforlanguages.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">

@@ -7,14 +7,14 @@
 	include_once JPATH_SITE.'/components/com_jshopping/bootstrap.php';
 	// 
 	// 
-	use \Joomla\CMS\Factory;
-	use \Joomla\CMS\Language\Text;
-	use \Joomla\CMS\Plugin\CMSPlugin;
-	use \Joomla\Component\Jshopping\Site\Lib\UploadFile;
+	use Joomla\CMS\Plugin\CMSPlugin;
+	// 
+	// 
+	use Joomla\Component\Jshopping\Site\Lib\UploadFile;
 	
 	// 
 	// 
-	\JLoader::registerAlias('JSFactory', 'Joomla\\Component\\Jshopping\\Site\\Lib\\JSFactory');
+	JLoader::registerAlias('JSFactory', 'Joomla\\Component\\Jshopping\\Site\\Lib\\JSFactory');
 	
 	
 	/**
@@ -46,7 +46,7 @@
 		{
 			// 
 			// 
-			$app = \JFactory::getApplication();
+			$app = JFactory::getApplication();
 			// 
 			// 
 			$task = $app->input->getVar('task', '');
@@ -56,10 +56,10 @@
 			{
 				// 
 				// 
-				$lang = \JSFactory::getModel('languages');
+				$lang = JSFactory::getModel('languages');
 				// 
 				// 
-				$jshopConfig = \JSFactory::getConfig();
+				$jshopConfig = JSFactory::getConfig();
 				// 
 				// 
 				$id = $app->input->getInt('id', 0);
@@ -69,7 +69,7 @@
 				{
 					// 
 					// 
-					throw new \InvalidArgumentException('id param must be more than zero', 400);
+					throw new InvalidArgumentException('id param must be more than zero', 400);
 				}
 				// 
 				// 
@@ -80,14 +80,14 @@
 				{
 					// 
 					// 
-					throw new \InvalidArgumentException('lang_tag must not be empty', 400);
+					throw new InvalidArgumentException('lang_tag must not be empty', 400);
 				}
 				// 
 				// 
 				$image = 'image_'.$lang_tag;
 				// 
 				// 
-				$productlabel_table = \JSFactory::getTable('productlabel', 'jshop');
+				$productlabel_table = JSFactory::getTable('productlabel');
 				// 
 				// 
 				$productlabel_table->load($id);
@@ -97,7 +97,7 @@
 				{
 					// 
 					// 
-					throw new \InvalidArgumentException('label not loaded', 400);
+					throw new InvalidArgumentException('label not loaded', 400);
 				}
 				// 
 				// 
@@ -105,7 +105,7 @@
 				{
 					// 
 					// 
-					throw new \InvalidArgumentException('Image not found', 400);
+					throw new InvalidArgumentException('Image not found', 400);
 				}
 				// 
 				// 
@@ -127,10 +127,7 @@
 		{
 			// 
 			// 
-			$app = Factory::getApplication();
-			// 
-			// 
-			$document = $app->getDocument();
+			$document = JFactory::getDocument();
 			// 
 			// 
 			$document->addScriptDeclaration('
@@ -164,13 +161,10 @@
 		{
 			// 
 			// 
-			$app = Factory::getApplication();
+			$jshopConfig = JSFactory::getConfig();
 			// 
 			// 
-			$jshopConfig = \JSFactory::getConfig();
-			// 
-			// 
-			$languages_model = \JSFactory::getModel('languages');
+			$languages_model = JSFactory::getModel('languages');
 			// 
 			// 
 			$languages = $languages_model->getAllLanguages(1);
@@ -187,7 +181,7 @@
 				{
 					// 
 					// 
-					$addon_table = \JSFactory::getTable('addon');
+					$addon_table = JSFactory::getTable('addon');
 					// 
 					// 
 					$addon_table->addFieldTable('#__jshopping_product_labels', $image, 'VARCHAR(255)');
@@ -196,7 +190,7 @@
 					$upload = new UploadFile($_FILES[$image]);
 					// 
 					// 
-					$upload->setAllowFile(['jpeg', 'jpg', 'gif', 'png']);
+					$upload->setAllowFile(array('jpeg', 'jpg', 'gif', 'png'));
 					// 
 					// 
 					$upload->setDir($jshopConfig->image_labels_path);
@@ -216,7 +210,7 @@
 						{
 							// 
 							// 
-							unlink($jshopConfig->image_labels_path.'/'.$post['old_'.$image]);
+							unlink($jshopConfig->image_labels_path."/".$post['old_'.$image]);
 						}
 						// 
 						// 
@@ -233,10 +227,10 @@
 						{
 							// 
 							// 
-							$app->enqueueMessage(Text::_('JSHOP_ERROR_UPLOADING_IMAGE'), 'error');
+							JError::raiseWarning('', _JSHOP_ERROR_UPLOADING_IMAGE);
 							// 
 							// 
-							\JSHelper::saveToLog('error.log', 'Label - Error upload image. code: '.$upload->getError());
+							saveToLog('error.log', 'Label - Error upload image. code: '.$upload->getError());
 						}
 					}
 				}
@@ -251,7 +245,7 @@
 		{
 			// 
 			// 
-			$template = \Factory::getApplication()->getTemplate();
+			$template = JFactory::getApplication()->getTemplate();
 			// 
 			// 
 			return [

@@ -35,23 +35,21 @@
 		 */
 		public function onListProductUpdateData(&$products)
 		{
+			
 			// 
 			// 
 			$jshopConfig = \JSFactory::getConfig();
 			// 
 			// 
-			$lang = \JSFactory::getLang();
+			$language = JFactory::getLanguage();
 			// 
 			// 
-			if ($jshopConfig->defaultLanguage == $lang->lang)
+			if ($jshopConfig->defaultLanguage == $language->getTag())
 			{
 				// 
 				// 
 				return;
 			}
-			// 
-			// 
-			$jshopConfig = JSFactory::getConfig();
 			// 
 			// 
 			if (is_array($products) && count($products))
@@ -88,13 +86,13 @@
 		{
 			// 
 			// 
-			$jshopConfig = \JSFactory::getConfig();
+			$jshopConfig = JSFactory::getConfig();
 			// 
 			// 
-			$lang = \JSFactory::getLang();
+			$lang = JSFactory::getLang();
 			// 
 			// 
-			if ($jshopConfig->defaultLanguage == $lang->language)
+			if ($jshopConfig->defaultLanguage == $lang->lang)
 			{
 				// 
 				// 
@@ -129,7 +127,7 @@
 			static $listLabels;
 			// 
 			// 
-			$jshopConfig = \JSFactory::getConfig();
+			$jshopConfig = JSFactory::getConfig();
 			// 
 			// 
 			if (!$jshopConfig->admin_show_product_labels)
@@ -162,13 +160,34 @@
 		{
 			// 
 			// 
-			$lang = \JSFactory::getLang();
+			$lang = JSFactory::getLang();
 			// 
 			// 
-			$db = \JFactory::getDBO();
+			$jshopConfig = JSFactory::getConfig();
 			// 
 			// 
-			$query = "SELECT id, `".$lang->get("image")."` as image FROM `#__jshopping_product_labels` ORDER BY name";
+			$db = JFactory::getDBO();
+			// 
+			// 
+			$language = JFactory::getLanguage();
+			
+			// 
+			// 
+			if ($jshopConfig->defaultLanguage === $language->getTag())
+			{
+				// 
+				// 
+				$image = 'image';
+			}
+			else
+			{
+				// 
+				// 
+				$image = 'image_'.$language->getTag();
+			}
+			// 
+			// 
+			$query = "SELECT id, `".$image."` as image FROM `#__jshopping_product_labels` ORDER BY name";
 			// 
 			// 
 			$db->setQuery($query);

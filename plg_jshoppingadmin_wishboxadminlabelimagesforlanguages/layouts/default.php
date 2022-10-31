@@ -3,9 +3,6 @@
 	defined('JPATH_BASE') or die;
 	
 	// 
-	use \Joomla\CMS\Language\Text;
-	
-	// 
 	// 
 	$languages = $displayData['languages'];
 	// 
@@ -23,7 +20,7 @@
 <?php $image = 'image_'.$language->language; ?>
 <tr>
 	<td class="key">
-		<?php echo Text::_('JSHOP_IMAGE'); ?><?php if ($multilang) echo '('.$language->lang.')'; ?>
+		<?php echo JText::_('JSHOP_IMAGE'); ?><?php if ($multilang) echo '('.$language->lang.')'; ?>
 	</td>
 	<td>
 		<?php if ($row->$image) { ?>
@@ -35,9 +32,9 @@
 				<a
 					class="btn btn-micro btn-danger"
 					href="#"
-					onclick="if (confirm('<?php echo Text::_('JSHOP_DELETE_IMAGE'); ?>')) wishboxadminlabelimagesforlanguages_deleteImage('<?php echo $row->id; ?>', '<?php echo $language->language; ?>'); return false;"
+					onclick="if (confirm('<?php echo JText::_('JSHOP_DELETE_IMAGE'); ?>')) wishboxadminlabelimagesforlanguages_deleteImage('<?php echo $row->id; ?>', '<?php echo $language->language; ?>'); return false;"
 				>
-					<img src="components/com_jshopping/images/publish_r.png"> <?php echo Text::_('JSHOP_DELETE_IMAGE'); ?>
+					<img src="components/com_jshopping/images/publish_r.png"> <?php echo JText::_('JSHOP_DELETE_IMAGE'); ?>
 				</a>
 			</div>
 		</div>
