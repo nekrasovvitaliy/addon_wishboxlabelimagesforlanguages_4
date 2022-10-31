@@ -24,6 +24,7 @@
 		public function __construct(&$subject, $config)
 		{
 			// 
+			// 
 			parent::__construct($subject, $config);
 		}
 		
@@ -36,10 +37,10 @@
 		{
 			// 
 			// 
-			$jshopConfig = JSFactory::getConfig();
+			$jshopConfig = \JSFactory::getConfig();
 			// 
 			// 
-			$lang = JSFactory::getLang();
+			$lang = \JSFactory::getLang();
 			// 
 			// 
 			if ($jshopConfig->defaultLanguage == $lang->lang)
@@ -87,13 +88,13 @@
 		{
 			// 
 			// 
-			$jshopConfig = JSFactory::getConfig();
+			$jshopConfig = \JSFactory::getConfig();
 			// 
 			// 
-			$lang = JSFactory::getLang();
+			$lang = \JSFactory::getLang();
 			// 
 			// 
-			if ($jshopConfig->defaultLanguage == $lang->lang)
+			if ($jshopConfig->defaultLanguage == $lang->language)
 			{
 				// 
 				// 
@@ -128,7 +129,7 @@
 			static $listLabels;
 			// 
 			// 
-			$jshopConfig = JSFactory::getConfig();
+			$jshopConfig = \JSFactory::getConfig();
 			// 
 			// 
 			if (!$jshopConfig->admin_show_product_labels)
@@ -161,10 +162,10 @@
 		{
 			// 
 			// 
-			$lang = JSFactory::getLang();
+			$lang = \JSFactory::getLang();
 			// 
 			// 
-			$db = JFactory::getDBO();
+			$db = \JFactory::getDBO();
 			// 
 			// 
 			$query = "SELECT id, `".$lang->get("image")."` as image FROM `#__jshopping_product_labels` ORDER BY name";
