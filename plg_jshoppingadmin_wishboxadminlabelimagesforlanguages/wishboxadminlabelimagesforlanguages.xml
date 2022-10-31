@@ -2,7 +2,7 @@
 <extension version="3.8.2" type="plugin" method="upgrade" group="jshoppingadmin">
 	<name>plg_jshoppingadmin_wishboxadminlabelimagesforlanguages</name>
 	<creationDate>December 2018</creationDate>
-	<copyright>Copyright (C) 2013-2018 WishBox. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2013-2022 WishBox. All rights reserved.</copyright>
 	<version>1.0.0</version>
 	<author>Vitaliy Nekrasov</author>
 	<authorEmail>nekrasov_vitaliy@list.ru</authorEmail>
@@ -14,12 +14,12 @@
 		<filename>index.html</filename>
 	</files>
 	<languages>
-		<language tag="en-GB">language/en-GB/en-GB.plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.ini</language>
-		<language tag="en-GB">language/en-GB/en-GB.plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.sys.ini</language>
-		<language tag="ru-RU">language/ru-RU/ru-RU.plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.ini</language>
-		<language tag="ru-RU">language/ru-RU/ru-RU.plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.sys.ini</language>
-		<language tag="uk-UA">language/uk-UA/uk-UA.plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.ini</language>
-		<language tag="uk-UA">language/uk-UA/uk-UA.plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.sys.ini</language>
+		<language tag="en-GB">language/en-GB/plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.ini</language>
+		<language tag="en-GB">language/en-GB/plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU/plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.ini</language>
+		<language tag="ru-RU">language/ru-RU/plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.sys.ini</language>
+		<language tag="uk-UA">language/uk-UA/plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.ini</language>
+		<language tag="uk-UA">language/uk-UA/plg_jshoppingadmin_wishboxadminlabelimagesforlanguages.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">
